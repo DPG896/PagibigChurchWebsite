@@ -1,0 +1,122 @@
+        /* reset */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:sans-serif; }
+
+        /* navbar container */
+        
+        nav {
+        position: fixed;
+        width: 100%;
+        top:0;
+        left:0;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:18px 60px;
+        transition: background 0.3s ease, padding 0.3s ease;
+        z-index:999;
+        }
+
+        /* default transparent */
+        nav.transparent {
+        background: transparent;
+        color: white;
+        }
+
+        /* solid on scroll */
+        nav.scrolled {
+        background: #fff;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        color: #000;
+        }
+
+        /* logo */
+        nav .logo {
+        font-size:22px;
+        font-weight:700;
+        letter-spacing:2px;
+        }
+
+        /* main menu */
+        nav ul {
+        display:flex;
+        gap:36px;
+        list-style:none;
+        }
+
+        nav ul li a {
+        text-decoration:none;
+        text-transform:uppercase;
+        font-size:14px;
+        letter-spacing:1.5px;
+        color:inherit;
+        transition:opacity 0.2s ease;
+        }
+
+        nav ul li a:hover {
+        opacity:0.6;
+        }
+
+        /* hamburger for mobile */
+        .menu-toggle {
+        display:none;
+        font-size:28px;
+        cursor:pointer;
+        }
+
+        /* mobile menu */
+        @media (max-width:900px) {
+        nav {
+        padding:12px 30px;
+        }
+        .menu-toggle { display:block; }
+        
+        nav ul {
+        position:fixed;
+        top:60px;
+        right:-100%;
+        width:240px;
+        background:#fff;
+        height:100vh;
+        flex-direction:column;
+        gap:24px;
+        padding:40px 24px;
+        transition:right 0.3s ease;
+        }
+        
+        nav ul.active { right:0; }
+        nav ul li a { color:#000; }
+        }
+        
+        /* HERO SECTION */
+        .hero {
+        position: relative;
+        /* height: 100vh; */
+        width: 100%;
+        background: url("https://drive.google.com/file/d/181I5R0wrAFN5klsUVSbYEuBY1xV5TYFr/view?usp=sharing")
+              no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        }
+
+        /* Dark overlay for readability */
+        .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        }
+
+        /* Content */
+        .hero-content {
+        position: relative;
+        z-index: 2;
+        }
+
+        .hero-content h1 {
+        color: white;
+        font-family:helvetica;
+        font-size: clamp(36px, 6vw, 80px);
+        font-weight: 500;
+        text-transform: uppercase;
+        }
